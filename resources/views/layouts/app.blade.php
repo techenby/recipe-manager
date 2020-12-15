@@ -23,6 +23,9 @@
         <div class="min-h-screen bg-gray-100 dark:bg-gray-800">
             @livewire('navigation-dropdown')
             <livewire:notifications />
+            <div x-data="{navHeight: 0 }" x-init="navHeight = document.getElementById('navbar').offsetHeight">
+                <div :style="'height: ' + navHeight + 'px'" style="height: 80px"></div>
+            </div>
 
             <!-- Page Heading -->
             <header>

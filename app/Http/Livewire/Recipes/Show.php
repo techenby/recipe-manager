@@ -12,7 +12,7 @@ class Show extends Component
     public function render()
     {
         return view('livewire.recipes.show')
-            ->layout('layouts.app', ['title' => $this->recipe->name]);
+            ->layout(auth()->check() ? 'layouts.app' : 'layouts.guest', ['title' => $this->recipe->name]);
     }
 
     public function delete()

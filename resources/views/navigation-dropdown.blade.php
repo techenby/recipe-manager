@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 dark:bg-gray-700 dark:border-gray-900">
+<nav x-data="{ open: false }" id="navbar" class="fixed z-50 w-full bg-white border-b border-gray-100 dark:bg-gray-700 dark:border-gray-900">
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -18,6 +18,7 @@
                 </div>
             </div>
 
+            @auth
             <!-- Settings Dropdown -->
             <div class="hidden space-x-4 sm:flex sm:items-center sm:ml-6">
                 <x-bit.button.primary :href="route('recipes.create')">Create</x-bit.button.primary>
@@ -102,6 +103,16 @@
                     </x-slot>
                 </x-jet-dropdown>
             </div>
+            @else
+            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <x-jet-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                    {{ __('Login') }}
+                </x-jet-nav-link>
+                <x-jet-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                    {{ __('Register') }}
+                </x-jet-nav-link>
+            </div>
+            @endauth
 
             <!-- Hamburger -->
             <div class="flex items-center -mr-2 sm:hidden">
@@ -123,6 +134,7 @@
             </x-jet-responsive-nav-link>
         </div>
 
+        @auth
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="flex items-center px-4">
@@ -189,5 +201,6 @@
                 @endif
             </div>
         </div>
+        @endauth
     </div>
 </nav>
