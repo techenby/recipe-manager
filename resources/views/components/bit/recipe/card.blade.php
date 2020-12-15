@@ -9,16 +9,14 @@
         </div>
         <div class="flex items-center mt-6">
             <div class="flex-shrink-0">
-                <a href="#">
+                <div>
                     <span class="sr-only">{{ $recipe->user->name }}</span>
                     <img class="object-cover w-10 h-10 rounded-full" src="{{ $recipe->user->profile_photo_url }}" alt="{{ $recipe->user->name }}" />
-                </a>
+                </div>
             </div>
             <div class="ml-3">
                 <p class="text-sm font-medium text-gray-900 dark:text-gray-200">
-                    <a href="#" class="hover:underline">
-                        {{ $recipe->user->name }}
-                    </a>
+                    {{ $recipe->user->name }}
                 </p>
                 <div class="text-xs text-gray-500 dark:text-gray-400">
                     <time datetime="{{ $recipe->created_at->format('Y-m-d') }}">
