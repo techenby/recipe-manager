@@ -4,7 +4,7 @@
 
 @php
 $colors = [
-    'gray' => 'bg-cool-gray-200 text-cool-gray-800 dark:bg-cool-gray-800 dark:text-cool-gray-300',
+    'gray' => 'bg-cool-gray-200 text-gray-800 dark:bg-gray-600 dark:text-gray-200',
     'red' => 'bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-100',
     'orange' => 'bg-orange-100 text-orange-800 dark:bg-orange-800 dark:text-orange-100',
     'yellow' => 'bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-100',

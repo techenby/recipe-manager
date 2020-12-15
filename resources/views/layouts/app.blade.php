@@ -22,6 +22,7 @@
     <body class="font-sans antialiased dark:bg-gray-800">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-800">
             @livewire('navigation-dropdown')
+            <livewire:notifications />
 
             <!-- Page Heading -->
             <header>
@@ -35,7 +36,7 @@
             </header>
 
             <!-- Page Content -->
-            <main class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <main class="px-4 mx-auto mb-8 max-w-7xl sm:px-6 lg:px-8">
                 {{ $slot }}
             </main>
         </div>
@@ -44,5 +45,7 @@
 
         @livewireScripts
         <script src="https://unpkg.com/trix@1.2.3/dist/trix.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/maxeckel/alpine-editor@0.3.1/dist/alpine-editor.min.js"></script>
     </body>
 </html>

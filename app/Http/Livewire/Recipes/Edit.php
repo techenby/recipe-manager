@@ -14,6 +14,16 @@ class Edit extends Component
         'recipe.ingredients' => '',
         'recipe.directions' => '',
     ];
+    public $formChanged = false;
+    public $redirect = false;
+
+    public function updating($field, $value)
+    {
+        $profileFields = ['recipe.name', 'recipe.ingredients', 'recipe.directions'];
+        if (in_array($field, $profileFields)) {
+            $this->formChanged = true;
+        }
+    }
 
     public function render()
     {
@@ -26,5 +36,10 @@ class Edit extends Component
         $this->validate();
 
         $this->recipe->save();
+        $this->formChanged = false;
+
+        if($this->redirect) {
+            return redirect()->route('recipes');
+        }
     }
 }

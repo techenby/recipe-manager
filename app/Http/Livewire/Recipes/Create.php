@@ -14,10 +14,20 @@ class Create extends Component
         'recipe.ingredients' => '',
         'recipe.directions' => '',
     ];
+    public $formChanged = false;
+    public $redirect = false;
 
     public function mount()
     {
         $this->recipe = Recipe::make(['user_id' => auth()->id(), 'team_id' => auth()->user()->current_team_id]);
+    }
+
+    public function updating($field)
+    {
+        $profileFields = ['recipe.name', 'recipe.ingredients', 'recipe.directions'];
+        if (in_array($field, $profileFields)) {
+            $this->formChanged = true;
+        }
     }
 
     public function render()
@@ -33,6 +43,10 @@ class Create extends Component
         $this->recipe->user_id = auth()->id();
         $this->recipe->team_id = auth()->user()->current_team_id;
         $this->recipe->save();
+
+        if($this->redirect) {
+            return redirect()->route('recipes');
+        }
 
         return redirect()->route('recipes.edit', $this->recipe);
     }

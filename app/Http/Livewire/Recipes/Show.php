@@ -14,4 +14,11 @@ class Show extends Component
         return view('livewire.recipes.show')
             ->layout('layouts.app', ['title' => $this->recipe->name]);
     }
+
+    public function delete()
+    {
+        $this->recipe->delete();
+
+        return redirect()->route('recipes');
+    }
 }

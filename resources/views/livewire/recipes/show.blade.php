@@ -1,14 +1,12 @@
 <div>
-    <x-slot name="header">
-        <div class="lg:flex lg:items-center lg:justify-between">
-            <h1 class="text-3xl font-semibold leading-tight text-gray-800 dark:text-gray-100">
-                {{ $recipe->name }}
-            </h1>
-            <div>
-                <x-bit.button.primary :href="route('recipes.edit', $recipe)">Edit</x-bit.button.primary>
-            </div>
-        </div>
-    </x-slot>
+    <div class="mb-4">
+        @can('update', $recipe)
+        <x-bit.button.primary :href="route('recipes.edit', $recipe)">Edit</x-bit.button.primary>
+        @endcan
+        @can('delete', $recipe)
+        <x-bit.button.primary wire:click="delete">Delete</x-bit.button.primary>
+        @endcan
+    </div>
 
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
         <x-bit.card>

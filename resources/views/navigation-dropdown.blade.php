@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex items-center flex-shrink-0">
                     <a href="/">
-                        <x-jet-application-mark class="block w-auto h-9" />
+                        <x-jet-application-mark class="block w-auto text-blue-800 dark:text-blue-200 h-9" />
                     </a>
                 </div>
 
