@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 
-trix-toolbar .trix-button {
-    @apply bg-gray-200;
+@variants dark {
+    trix-toolbar .trix-button {
+        @apply bg-gray-200 !important;
+    }
 }
