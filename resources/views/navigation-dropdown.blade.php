@@ -59,7 +59,7 @@
                         <div class="border-t border-gray-100"></div>
 
                         <!-- Team Management -->
-                        @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                        @if (Laravel\Jetstream\Jetstream::hasTeamFeatures() && auth()->user()->allTeams()->count() > 0)
                             <div class="block px-4 py-2 text-xs text-gray-400">
                                 {{ __('Manage Family') }}
                             </div>
@@ -160,27 +160,27 @@
                 </form>
 
                 <!-- Team Management -->
-                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures() && auth()->user()->allTeams()->count() > 0)
                     <div class="border-t border-gray-200"></div>
 
                     <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Manage Team') }}
+                        {{ __('Manage Families') }}
                     </div>
 
                     <!-- Team Settings -->
                     <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
-                        {{ __('Team Settings') }}
+                        {{ __('Family Settings') }}
                     </x-jet-responsive-nav-link>
 
                     <x-jet-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
-                        {{ __('Create New Team') }}
+                        {{ __('Create New Family') }}
                     </x-jet-responsive-nav-link>
 
                     <div class="border-t border-gray-200"></div>
 
                     <!-- Team Switcher -->
                     <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Switch Teams') }}
+                        {{ __('Switch Families') }}
                     </div>
 
                     @foreach (Auth::user()->allTeams() as $team)
