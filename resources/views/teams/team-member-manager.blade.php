@@ -15,7 +15,7 @@
 
                 <x-slot name="form">
                     <div class="col-span-6">
-                        <div class="max-w-xl text-sm text-gray-600">
+                        <div class="max-w-xl text-sm text-gray-600 dark:text-gray-200">
                             {{ __('Please provide the email address of the person you would like to add to this family. The email address must be associated with an existing account.') }}
                         </div>
                     </div>
@@ -40,17 +40,17 @@
                                             <div class="{{ isset($addTeamMemberForm['role']) && $addTeamMemberForm['role'] !== $role->key ? 'opacity-50' : '' }}">
                                                 <!-- Role Name -->
                                                 <div class="flex items-center">
-                                                    <div class="text-sm text-gray-600 {{ $addTeamMemberForm['role'] == $role->key ? 'font-semibold' : '' }}">
+                                                    <div class="text-sm text-gray-600 dark:text-gray-200 {{ $addTeamMemberForm['role'] == $role->key ? 'font-semibold' : '' }}">
                                                         {{ $role->name }}
                                                     </div>
 
                                                     @if ($addTeamMemberForm['role'] == $role->key)
-                                                        <svg class="w-5 h-5 ml-2 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                        <svg class="w-5 h-5 ml-2 text-green-400 dark:text-gray-200" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                                     @endif
                                                 </div>
 
                                                 <!-- Role Description -->
-                                                <div class="mt-2 text-xs text-gray-600">
+                                                <div class="mt-2 text-xs text-gray-600 dark:text-gray-200">
                                                     {{ $role->description }}
                                                 </div>
                                             </div>

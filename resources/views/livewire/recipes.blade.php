@@ -34,7 +34,7 @@
 
         <div class="col-span-3 space-y-4">
             @if($view === 'grid')
-            <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
                 @foreach($recipes as $recipe)
                 <x-bit.recipe.card :key="$recipe->id" :recipe="$recipe" />
                 @endforeach
