@@ -6,7 +6,7 @@ Route::redirect('/', '/login');
 Route::get('/recipes', App\Http\Livewire\Recipes::class)->name('recipes');
 Route::get('/recipes/{recipe}', App\Http\Livewire\Recipes\Show::class)->name('recipes.show');
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function() {
+Route::middleware(['auth:sanctum'])->group(function() {
     Route::redirect('/dashboard', '/recipes');
     Route::get('/recipes/create', App\Http\Livewire\Recipes\Create::class)->name('recipes.create');
     Route::get('/recipes/{recipe}/edit', App\Http\Livewire\Recipes\Edit::class)->name('recipes.edit');
