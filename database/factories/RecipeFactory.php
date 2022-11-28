@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Recipe;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RecipeFactory extends Factory
