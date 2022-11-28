@@ -11,7 +11,6 @@
         "php": "^7.3|^8.0",
         "blade-ui-kit/blade-heroicons": "^0.3.1",
         "fideloper/proxy": "^4.4",
-        "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^1.6",
