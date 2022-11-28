@@ -14,7 +14,9 @@ class Create extends Component
         'recipe.ingredients' => '',
         'recipe.directions' => '',
     ];
+
     public $formChanged = false;
+
     public $redirect = false;
 
     public function mount()
@@ -33,7 +35,7 @@ class Create extends Component
     public function render()
     {
         return view('livewire.recipes.create')
-            ->layout('layouts.app', ['title' => 'Create New Recipe']);;
+            ->layout('layouts.app', ['title' => 'Create New Recipe']);
     }
 
     public function save()
@@ -44,7 +46,7 @@ class Create extends Component
         $this->recipe->team_id = auth()->user()->current_team_id;
         $this->recipe->save();
 
-        if($this->redirect) {
+        if ($this->redirect) {
             return redirect()->route('recipes');
         }
 
