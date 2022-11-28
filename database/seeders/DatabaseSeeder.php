@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Actions\Jetstream\CreateTeam;
-use App\Actions\Jetstream\AddTeamMember;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {

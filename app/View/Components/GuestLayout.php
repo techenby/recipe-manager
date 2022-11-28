@@ -12,6 +12,7 @@ class GuestLayout extends Component
     {
         $this->noPadding = $noPadding;
     }
+
     public function render()
     {
         return view('layouts.guest');

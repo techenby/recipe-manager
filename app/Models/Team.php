@@ -9,7 +9,6 @@ use Laravel\Jetstream\Team as JetstreamTeam;
 
 class Team extends JetstreamTeam
 {
-
     protected $casts = [
         'personal_team' => 'boolean',
     ];

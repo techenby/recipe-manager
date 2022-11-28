@@ -17,7 +17,9 @@ class Recipes extends Component
         'search' => '',
         'teams' => [],
     ];
+
     public $perPage = 12;
+
     public $view = 'grid';
 
     public function render()
@@ -33,8 +35,8 @@ class Recipes extends Component
     public function getRowsProperty()
     {
         return Recipe::with('user', 'team')
-            ->when($this->filters['teams'] !== [], fn($query) => $query->whereIn('team_id', $this->filters['teams']))
-            ->when($this->filters['search'] !== [], fn($query) => $query->where('name', 'LIKE',  '%'.$this->filters['search'].'%'))
+            ->when($this->filters['teams'] !== [], fn ($query) => $query->whereIn('team_id', $this->filters['teams']))
+            ->when($this->filters['search'] !== [], fn ($query) => $query->where('name', 'LIKE', '%'.$this->filters['search'].'%'))
             ->orderBy($this->sortField, $this->sortDirection)
             ->paginate($this->perPage);
     }

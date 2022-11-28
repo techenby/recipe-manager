@@ -14,7 +14,9 @@ class Edit extends Component
         'recipe.ingredients' => '',
         'recipe.directions' => '',
     ];
+
     public $formChanged = false;
+
     public $redirect = false;
 
     public function updating($field, $value)
@@ -28,7 +30,7 @@ class Edit extends Component
     public function render()
     {
         return view('livewire.recipes.edit')
-            ->layout('layouts.app', ['title' => 'Edit: ' . $this->recipe->name]);
+            ->layout('layouts.app', ['title' => 'Edit: '.$this->recipe->name]);
     }
 
     public function save()
@@ -38,7 +40,7 @@ class Edit extends Component
         $this->recipe->save();
         $this->formChanged = false;
 
-        if($this->redirect) {
+        if ($this->redirect) {
             return redirect()->route('recipes');
         }
     }
