@@ -20,7 +20,7 @@
 
 <body class="dark:bg-gray-800">
     <div class="font-sans antialiased text-gray-900">
-        @livewire('navigation-dropdown')
+        @include('navigation-dropdown')
         <livewire:notifications />
 
 
